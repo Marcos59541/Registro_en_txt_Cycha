@@ -20,6 +20,7 @@ namespace Registro_en_txt
 
         private void ButtonCancelar_Click(object sender, EventArgs e)
         {
+      
             TextboxName.Text = string.Empty;
             Textboxapellidos.Text = string.Empty;
             textBoxEstatura.Text = string.Empty;
@@ -31,20 +32,45 @@ namespace Registro_en_txt
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
+            if (!Validacion.TextoValido(TextboxName.Text))
+            {
+                MessageBox.Show("Nombre inválido.");
+                return;
+            }
+
+            if (!Validacion.TextoValido(Textboxapellidos.Text))
+            {
+                MessageBox.Show("Apellidos inválidos.");
+                return;
+            }
+
+            if (!Validacion.TelefonoValido(textBoxtelefono.Text))
+            {
+                MessageBox.Show("Teléfono inválido");
+                return;
+            }
+
+            if (!Validacion.EstaturaValido(textBoxEstatura.Text))
+            {
+                MessageBox.Show("Estatura inválida.");
+                return;
+            }
+
+
+            if (!Validacion.EdadValido(textBoxEdad.Text))
+            {
+                MessageBox.Show("Edad inválida.");
+                return;
+            }
+
+
             string Datos = "Nombre: " + TextboxName.Text + "\n" +
                            "Apellidos: " + Textboxapellidos.Text + "\n" +
                            "Teléfono: " + textBoxtelefono.Text + "\n" +
                            "Estatura: " + textBoxEstatura.Text + "\n" +
                            "Edad: " + textBoxEdad.Text + "\n" +
-                           "Sexo: " + "\n";
-            if (radioButtonMasculino.Checked == true)
-            {
-                Datos += "Hombre";
-            }
-            else if (radioButtonMujer.Checked == true)
-            {
-                Datos += "Mujer";
-            }
+                           "Sexo: " + (radioButtonMasculino.Checked ? "Hombre" : "Mujer") + "\n";
+
             string Nombre_archivo = "Datos_registro.txt";
 
             File.WriteAllText(Nombre_archivo, Datos);
