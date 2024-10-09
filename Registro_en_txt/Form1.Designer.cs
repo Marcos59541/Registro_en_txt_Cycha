@@ -43,7 +43,6 @@
             this.Labelsexo = new System.Windows.Forms.Label();
             this.radioButtonMasculino = new System.Windows.Forms.RadioButton();
             this.radioButtonMujer = new System.Windows.Forms.RadioButton();
-            this.Siempre = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // LabelNombre
@@ -179,23 +178,11 @@
             this.radioButtonMujer.Text = "Mujer";
             this.radioButtonMujer.UseVisualStyleBackColor = true;
             // 
-            // Siempre
-            // 
-            this.Siempre.AutoSize = true;
-            this.Siempre.Location = new System.Drawing.Point(145, 313);
-            this.Siempre.Name = "Siempre";
-            this.Siempre.Size = new System.Drawing.Size(79, 20);
-            this.Siempre.TabIndex = 15;
-            this.Siempre.TabStop = true;
-            this.Siempre.Text = "Siempre";
-            this.Siempre.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 550);
-            this.Controls.Add(this.Siempre);
             this.Controls.Add(this.radioButtonMujer);
             this.Controls.Add(this.radioButtonMasculino);
             this.Controls.Add(this.Labelsexo);
@@ -235,7 +222,6 @@
         private System.Windows.Forms.Label Labelsexo;
         private System.Windows.Forms.RadioButton radioButtonMasculino;
         private System.Windows.Forms.RadioButton radioButtonMujer;
-        private System.Windows.Forms.RadioButton Siempre;
     }
 }
 
